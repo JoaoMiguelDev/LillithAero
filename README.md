@@ -14,7 +14,6 @@ Lillith Aero tells the story of Lillith, a woman that gets stuck in her computer
 ## Notes
 
 - This Project was made to test and upgrade my programming skills and to understand Godot deeply
-- This is not the final version of the game, it's just a prototype
 - This is an early-stage prototype. Development is ongoing and subject to change.
 
 
