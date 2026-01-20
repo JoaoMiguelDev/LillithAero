@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://c3iyyw0oekan8"]
+
+[ext_resource type="Script" uid="uid://b80fkpy1m4gov" path="res://scripts/AudioManager.cs" id="1_liach"]
+[ext_resource type="AudioStream" uid="uid://bj66idgplcjpn" path="res://assets/sounds/OpenDoor.ogg" id="2_3asnw"]
+[ext_resource type="AudioStream" uid="uid://dk33yb24ytfhh" path="res://assets/sounds/AeroFruitPickup.ogg" id="3_4tesi"]
+[ext_resource type="AudioStream" uid="uid://igsp1haph7af" path="res://assets/sounds/GameStart.ogg" id="4_3dgps"]
+[ext_resource type="AudioStream" uid="uid://byuk2jxoe13y" path="res://assets/sounds/ButtonClicked.ogg" id="5_151wy"]
+
+[node name="AudioManager" type="Node" node_paths=PackedStringArray("SfxDoor", "SfxFruit", "SfxGameStart", "SfxButtonClicked")]
+script = ExtResource("1_liach")
+SfxDoor = NodePath("SfxDoor")
+SfxFruit = NodePath("SfxFruit")
+SfxGameStart = NodePath("SfxGameStart")
+SfxButtonClicked = NodePath("SfxButtonClicked")
+
+[node name="SfxDoor" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_3asnw")
+volume_db = -5.0
+
+[node name="SfxFruit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_4tesi")
+volume_db = -5.0
+
+[node name="SfxGameStart" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_3dgps")
+volume_db = -3.0
+
+[node name="SfxButtonClicked" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_151wy")
+volume_db = -1.0

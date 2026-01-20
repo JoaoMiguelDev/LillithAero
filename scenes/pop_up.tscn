@@ -1,0 +1,92 @@
+[gd_scene load_steps=14 format=3 uid="uid://d2qv0x317pgse"]
+
+[ext_resource type="Texture2D" uid="uid://36qfvsroehnf" path="res://assets/sprites/PopUp.png" id="1_ui8ff"]
+[ext_resource type="Script" uid="uid://bowxw384k54tk" path="res://scripts/PopUp.cs" id="1_vln5t"]
+[ext_resource type="AudioStream" uid="uid://chhsyvff1lrei" path="res://assets/sounds/EnemyHit.ogg" id="3_gtdy0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vln5t"]
+atlas = ExtResource("1_ui8ff")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gtdy0"]
+atlas = ExtResource("1_ui8ff")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cy0db"]
+atlas = ExtResource("1_ui8ff")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m1c7x"]
+atlas = ExtResource("1_ui8ff")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d1vi8"]
+atlas = ExtResource("1_ui8ff")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3krx5"]
+atlas = ExtResource("1_ui8ff")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mj2mx"]
+atlas = ExtResource("1_ui8ff")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ayjy8"]
+atlas = ExtResource("1_ui8ff")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6ebdp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vln5t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gtdy0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cy0db")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m1c7x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d1vi8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3krx5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mj2mx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ayjy8")
+}],
+"loop": true,
+"name": &"hover",
+"speed": 12.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_00tnu"]
+size = Vector2(32, 21)
+
+[node name="PopUp" type="Area2D"]
+script = ExtResource("1_vln5t")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_6ebdp")
+animation = &"hover"
+autoplay = "hover"
+frame = 4
+frame_progress = 0.8568213
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_00tnu")
+
+[node name="EnemyHit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_gtdy0")
+volume_db = -1.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

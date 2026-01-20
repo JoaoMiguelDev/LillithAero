@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://cctyg3cnsw2ny"]
+
+[ext_resource type="FontFile" uid="uid://ctkfky87sc1p1" path="res://assets/fonts/PixelOperator8.ttf" id="1_ytmnr"]
+[ext_resource type="Texture2D" uid="uid://chq0xa52hnc2l" path="res://assets/sprites/AeroClock.png" id="2_ytmnr"]
+
+[node name="Clock" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="RunTime" type="Label" parent="."]
+layout_mode = 0
+offset_left = 18.0
+offset_top = -12.0
+offset_right = 150.0
+offset_bottom = 20.0
+theme_override_colors/font_color = Color(0.44313726, 0.65882355, 0.7764706, 1)
+theme_override_fonts/font = ExtResource("1_ytmnr")
+theme_override_font_sizes/font_size = 32
+text = "12.72"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-7, 0)
+scale = Vector2(5, 5)
+texture = ExtResource("2_ytmnr")
+region_rect = Rect2(96, 0, 16, 16)

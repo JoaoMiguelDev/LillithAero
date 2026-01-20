@@ -1,0 +1,59 @@
+[gd_scene load_steps=9 format=3 uid="uid://dyqmne1gpwtrj"]
+
+[ext_resource type="Texture2D" uid="uid://phsvremu5exd" path="res://assets/sprites/AeroFruit.png" id="1_mcff5"]
+[ext_resource type="Script" uid="uid://b56qxm6tjl7sh" path="res://scripts/AeroFruit.cs" id="1_opwlo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_opwlo"]
+atlas = ExtResource("1_mcff5")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dyat2"]
+atlas = ExtResource("1_mcff5")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m6div"]
+atlas = ExtResource("1_mcff5")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ctqt"]
+atlas = ExtResource("1_mcff5")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xj5cs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_opwlo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dyat2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m6div")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ctqt")
+}],
+"loop": true,
+"name": &"float",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dyat2"]
+size = Vector2(15, 11)
+
+[node name="AeroFruit" type="Area2D"]
+script = ExtResource("1_opwlo")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_xj5cs")
+animation = &"float"
+autoplay = "float"
+frame = 1
+frame_progress = 0.07020717
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_dyat2")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

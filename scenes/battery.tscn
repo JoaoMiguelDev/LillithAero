@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://b3rnvxm4tnd2x"]
+
+[ext_resource type="FontFile" uid="uid://ctkfky87sc1p1" path="res://assets/fonts/PixelOperator8.ttf" id="1_y58p0"]
+[ext_resource type="Texture2D" uid="uid://ciis5f15siobs" path="res://assets/sprites/BatteryBar.png" id="2_y58p0"]
+
+[node name="Battery" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BatteryLevel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 35.0
+offset_top = -12.0
+offset_right = 155.0
+offset_bottom = 20.0
+theme_override_colors/font_color = Color(0.44313726, 0.65882355, 0.7764706, 1)
+theme_override_fonts/font = ExtResource("1_y58p0")
+theme_override_font_sizes/font_size = 32
+text = "100%"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-7, 0)
+scale = Vector2(5, 5)
+texture = ExtResource("2_y58p0")
+region_enabled = true
+region_rect = Rect2(96, 0, 16, 16)
